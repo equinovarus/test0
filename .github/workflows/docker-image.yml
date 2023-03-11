@@ -2,10 +2,6 @@ name: Docker
 
 on: push
 
-runs:
-  using: 'node16'
-  main: 'main.js'
-
 jobs:
   push:
     runs-on: ubuntu-latest
