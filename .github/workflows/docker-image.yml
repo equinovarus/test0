@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build image
-        run: docker build . --file Dockerfile --tag hellopy-test1
+        run: docker build . --file Dockerfile --tag hellopy-test0
 
       - name: Login to Docker Hub
         uses: docker/login-action@v2
@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Tag
-        run: docker tag hellopy-test1 ${{ secrets.DOCKERHUB_USERNAME }}/hellopy:latest
+        run: docker tag hellopy-test0 ${{ secrets.DOCKERHUB_USERNAME }}/hellopy:latest
 
       - name: Push image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/hellopy:latest
